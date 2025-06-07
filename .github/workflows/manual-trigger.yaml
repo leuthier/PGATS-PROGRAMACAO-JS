@@ -1,10 +1,10 @@
-name: 'Manual trigger'
+name: 'Unit Test - Manual trigger'
 
 on:
   workflow_dispatch:
 
 jobs:
-  e2e-trigger:
+  ut-trigger:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
@@ -16,4 +16,4 @@ jobs:
         run: npm install -D mocha
 
       - name: Running tests
-        run: npx mocha trabalho/trabalho-final.js
+        run: unit-test
