@@ -7,20 +7,13 @@ jobs:
   e2e-trigger:
     runs-on: ubuntu-latest
     steps: 
-      # clone do projeto
       - uses: actions/checkout@v4
-      # Node install
+      
       - uses: actions/setup-node@v4
         with:
           node-version: latest
-      - name: Yarn install
-        run: npm install -g yarn
-      
-      - name: Dependencies install
-        run: yarn
-      
-      - name: Playwright install
-        run: yarn playwright install
+      - name: Install Mocha
+        run: npm install -D mocha
 
-      - name: Running E2E tests
-        run: yarn run e2e
+      - name: Running tests
+        run: npx mocha trabalho/trabalho-final.js
