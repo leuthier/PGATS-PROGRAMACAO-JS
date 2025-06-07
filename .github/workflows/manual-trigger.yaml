@@ -16,4 +16,4 @@ jobs:
         run: npm install -D mocha
 
       - name: Running tests
-        run: unit-test
+        run: npm run unit-test
